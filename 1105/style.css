@@ -3,8 +3,8 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 ul, ol, li {list-style: none;}
 
-/* .wrap {width: 1000px; margin: 50px; margin-bottom: 200px;} */
-.wrap ul li {
+.wrap1 {width: 1000px; margin: 50px; margin-bottom: 200px;}
+.wrap1 ul li {
     width: 100%;
     height: 80px;
     margin-bottom: 20px;
@@ -19,7 +19,7 @@ ul, ol, li {list-style: none;}
 
 }
 
-.wrap ul li::after {
+.wrap1 ul li::after {
     display: block;
     content: '';
     position: absolute;
@@ -178,11 +178,9 @@ ul, ol, li {list-style: none;}
 
 .rolling1.original {
 	animation: rollingleft1 40s linear infinite;
-    /* animation-play-state: paused; */
 }
 .rolling1.clone {
 	animation: rollingleft2 40s linear infinite;
-    /* animation-play-state: paused; */
 }
 
 @keyframes rollingleft1 {

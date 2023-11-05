@@ -22,3 +22,14 @@ wrap.addEventListener("mouseleave", (e)=>{
     roller.classList.add('original');
     roller_clone.classList.add('clone');
 })
+
+
+// window.addEventListener("scroll", (e)=>{
+// function scroll(){
+//     $('.rolling1 p:first').slideUp( function () { 
+//         $(this).appendTo($('.rolling1')).slideDown();
+//     });
+// }
+//     setInterval(function(){scroll()},500);
+// })
+
