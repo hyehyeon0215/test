@@ -3,7 +3,7 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 ul, ol, li {list-style: none;}
 
-.wrap {width: 1000px; margin: 50px; margin-bottom: 200px;}
+/* .wrap {width: 1000px; margin: 50px; margin-bottom: 200px;} */
 .wrap ul li {
     width: 100%;
     height: 80px;
@@ -166,4 +166,33 @@ ul, ol, li {list-style: none;}
 @keyframes underline2 {
     0% {width: 0%;}
     70% {width: 100%;}
+}
+
+
+.txt-slide-wrap {
+    width: 700px;
+    height: 700px;
+    background-color: aqua;
+    overflow: auto;
+}
+
+.rolling1.original {
+	animation: rollingleft1 40s linear infinite;
+    /* animation-play-state: paused; */
+}
+.rolling1.clone {
+	animation: rollingleft2 40s linear infinite;
+    /* animation-play-state: paused; */
+}
+
+@keyframes rollingleft1 {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-100%); }
+	50.01% { transform: translateY(100%); }
+	100% { transform: translateY(0); }
+}
+
+@keyframes rollingleft2 {
+	0% { transition: translateY(0); }
+	100% { transform: translateY(-200%); }
 }
