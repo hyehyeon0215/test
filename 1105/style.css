@@ -53,12 +53,12 @@ ul, ol, li {list-style: none;}
     position: absolute;
     right: 0;
     bottom: 0;
-    stroke-dasharray: 500;
-    stroke-dashoffset: 500;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
     animation: ani 3s linear infinite;
 }
 
 @keyframes ani {
-    0% {stroke-dashoffset: 500;}
+    0% {stroke-dashoffset: 400;}
     100% {stroke-dashoffset: 0;}
 }
