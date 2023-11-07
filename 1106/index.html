@@ -37,9 +37,13 @@
             position: absolute;
             left: 0;
             bottom: -5px;
-            width: 100%;
+            width: 0%;
             height: 5px;
+        }
+
+        .wrap4 ul.underlineAni li span::before {
             animation: underline2 1s linear;
+            animation-fill-mode: forwards;
         }
 
         .wrap4 ul li:nth-of-type(2) span {
@@ -72,26 +76,46 @@
 
         @keyframes underline2 {
             0% {width: 0%;}
-            70% {width: 100%;}
+            100% {width: 100%;}
         }
         
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        var isVisible = false;
+
+        $(window).on('scroll',function() {
+            if (checkVisible($('.wrap4 ul'))&&!isVisible) {
+                $('.wrap4 ul').addClass('underlineAni');
+                isVisible=true;
+            }
+        });
+
+        function checkVisible( elm, eval ) {
+            eval = eval || "object visible";
+            var viewportHeight = $(window).height(), // Viewport Height
+                scrolltop = $(window).scrollTop(), // Scroll Top
+                y = $(elm).offset().top,
+                elementHeight = $(elm).height();   
+            
+            if (eval == "object visible") return ((y < (viewportHeight + scrolltop)) && (y > (scrolltop - elementHeight)));
+            if (eval == "above") return ((y < (viewportHeight + scrolltop)));
+        }
+    </script>
 </head>
 <body>
     <section style="background-color: antiquewhite;"></section>
     <section style="background-color: aquamarine;"></section>
     <section style="background-color: blue;">
-        <div class="wrap">
+        <div class="wrap4">
             <div></div>
-            <div class="wrap4">
-                <ul>
-                    <li><span>안녕하세요</span></li>
-                    <li><span>안녕하세요반갑습니다</span></li>
-                    <li><span>안녕하</span></li>
-                    <li><span>안녕</span></li>
-                    <li><span>안</span></li>
-                </ul>
-            </div>
+            <ul>
+                <li><span>안녕하세요</span></li>
+                <li><span>안녕하세요반갑습니다</span></li>
+                <li><span>안녕하</span></li>
+                <li><span>안녕</span></li>
+                <li><span>안</span></li>
+            </ul>
         </div>
     </section>
     <section style="background-color: blueviolet;"></section>
