@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File 커스텀 연습</title>
+    <link rel="stylesheet" href="./style.css">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $('#inputFile').on('change', function(e){
+                var file = e.target.files[0];
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.preview img').attr("src", e.target.result);
+                }
+
+                reader.readAsDataURL(file);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <label>
+            <input type="file" id="inputFile">
+            <div class="preview"><img src="./img/profile.svg" alt=""></div>
+            <img src="./img/camera.svg" alt="">
+        </label>
+    </div>
+</body>
+</html>
